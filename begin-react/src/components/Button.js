@@ -4,17 +4,20 @@ import classNames from 'classnames'
 import './Button.scss';
 
 
-//size : large, medium, small
-function Button({children, size}) {
+// size : large, medium, small
+// color : blue, pink, gray
+function Button({children, size, color}) {
   return (
     //<button className={["Button", size].join(' ')}>{children}</button>
     //<button className={`Button ${size}`}>{children}</button> // 위와 동일하다.
-    <button className={classNames('Button', size)}>{children}</button> // 위와 동일하다.
+    // 위와 동일하다. classnames 라이브러리를 사용했다.
+    <button className={classNames('Button', size, color)}>{children}</button>
   );
 }
 
 Button.defaultProps = {
-    size: 'medium'
+    size: 'medium',
+    color : 'blue'
 };
 
 export default Button;
