@@ -10,6 +10,24 @@ $blue: #228be6; // 주석
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &.large {
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    &.medium {
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    &.small {
+        height: 1.75rem;
+        font-size: 0.875rem;
+    }
 
     height: 2.25rem; // 현재 브라우저 기본 폰트 사이즈에 기반하여 사이즈가 조정된다.
     padding-left: 1rem;
@@ -17,10 +35,21 @@ $blue: #228be6; // 주석
     font-size: $blue;
 
     background: #228be6;
+    // & : 자기 자신을 가르킨다.
     &:hover{
         background: lighten($blue, 10%); //색상을 설정한 비율에 따라 밝게 해준다.
     }
     &:active{
         background: darken($blue, 10%); //색상을 설정한 비율에 따라 어둡게 해준다.
     }
+
+    // 버튼과 버튼 사이 설정 2
+    & + & {
+        margin-left: 1rem;
+    }
 }
+
+// 버튼과 버튼 사이 설정 1
+/*.Button + .Button{
+    margin-left: 1rem;
+}*/
