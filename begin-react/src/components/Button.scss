@@ -11,6 +11,15 @@ $pink: #f06595;
   &:active {
     background: darken($color, 10%); //색상을 설정한 비율에 따라 어둡게 해준다.
   }
+  &.outline {
+      color:$color;
+      background: none;
+      border: 1px solid $color;
+      &:hover {
+          background: $color;
+          color: white;
+      }
+  }
 }
 
 .Button {
@@ -22,10 +31,12 @@ $pink: #f06595;
   outline: none;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: pointer;  
 
+  height: 2.25rem; // 현재 브라우저 기본 폰트 사이즈에 기반하여 사이즈가 조정된다.
   padding-left: 1rem;
   padding-right: 1rem;
+  font-size: $blue;
 
   &.large {
     height: 3rem;
@@ -52,14 +63,19 @@ $pink: #f06595;
     @include button-color($pink);
   }
 
-  height: 2.25rem; // 현재 브라우저 기본 폰트 사이즈에 기반하여 사이즈가 조정된다.
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: $blue;
-
   // 버튼과 버튼 사이 설정 2
   & + & {
     margin-left: 1rem;
+  }
+
+  &.fullWidth {
+      width: 100%;
+      //가운데 정렬하겠다.
+      justify-content: center;
+      & + & {
+          margin-left: 0;
+          margin-top: 1rem;
+      }
   }
 }
 
